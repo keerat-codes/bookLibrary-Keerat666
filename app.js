@@ -9,6 +9,8 @@ require('dotenv').config();
 app.use(cors())
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+const danBrown  = require('./controllers/danBrown');
+app.use('/controller', danBrown);
 const keeratBooksRoute = require('./routes/keeratBooks');
 app.use('/keeratBooks', keeratBooksRoute);
 
